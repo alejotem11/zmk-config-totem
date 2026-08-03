@@ -40,14 +40,18 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EXCL";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp RA(NUMBER_1)>;
+            bindings = <&kp EXCL>, <&kp RA(LA(NUMBER_1))>;
+
+            tapping-term-ms = <250>;
         };
 
         td_qmark: td_qmark {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_QMARK";
             #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp RA(LS(FSLH))>;
+            bindings = <&kp QMARK>, <&kp RA(LS(LA(FSLH)))>;
+
+            tapping-term-ms = <250>;
         };
     };
 
