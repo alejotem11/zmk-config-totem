@@ -21,18 +21,25 @@
         combo_caps {
             bindings = <&kp CAPSLOCK>;
             key-positions = <16 13>;
+            layers = <0>;
         };
 
         combo_excl {
-            bindings = <&kp LA(RA(NUMBER_1))>;
+            bindings = <&kp RA(NUMBER_1)>;
             key-positions = <0 1>;
             layers = <1>;
         };
 
         combo_qmark {
-            bindings = <&kp LA(RA(LS(FSLH)))>;
+            bindings = <&kp RA(RS(FSLH))>;
             key-positions = <30 29>;
             layers = <1>;
+        };
+
+        combo_ralt {
+            bindings = <&kp RALT>;
+            key-positions = <11 18>;
+            layers = <0>;
         };
     };
 
@@ -55,7 +62,7 @@
         base {
             bindings = <
                           &kp Q        &kp W        &kp E         &kp R            &kp T           &kp Y        &kp U         &kp I         &kp O        &kp P
-                          &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F    &kp G           &kp H        &hrm RSHFT J  &hrm RCTRL K  &hrm RALT L  &hrm RGUI SEMICOLON
+                          &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F    &kp G           &kp H        &hrm RSHFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMICOLON
 &kp LS(LC(LG(NUMBER_4)))  &kp Z        &kp X        &kp C         &kp V            &kp B           &kp N        &kp M         &kp COMMA     &kp DOT      &kp SLASH            &kp RA(E)
                                                     &kp DELETE    &lt 2 BACKSPACE  &lt 1 RETURN    &lt 1 SPACE  &lt 4 ESC     &lt 5 TAB
             >;
@@ -63,10 +70,10 @@
 
         sym {
             bindings = <
-       &kp EXCL       &kp AT_SIGN       &kp HASH        &kp DOLLAR            &kp PERCENT    &kp CARET             &kp AMPERSAND          &kp ASTERISK     &kp GRAVE          &kp TILDE
-       &kp LESS_THAN  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp DOUBLE_QUOTES     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN
-&none  &none          &none             &kp MINUS       &kp UNDERSCORE        &kp PLUS       &kp LS(LA(LC(SEMI)))  &kp SQT                &kp PIPE         &kp BACKSLASH      &kp QMARK         &none
-                                        &none           &none                 &none          &trans                &trans                 &trans
+       &kp EXCL       &kp AT_SIGN       &kp HASH        &kp DOLLAR            &kp PERCENT    &kp CARET          &kp AMPERSAND          &kp ASTERISK     &kp GRAVE          &kp TILDE
+       &kp LESS_THAN  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN
+&none  &none          &none             &kp MINUS       &kp UNDERSCORE        &kp PLUS       &none              &kp SQT                &kp PIPE         &kp BACKSLASH      &kp QMARK         &none
+                                        &none           &none                 &none          &trans             &trans                 &trans
             >;
         };
 
