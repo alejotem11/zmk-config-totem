@@ -41,6 +41,12 @@
             key-positions = <11 18>;
             layers = <0>;
         };
+
+        combo_enie {
+            bindings = <&macro_enie>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -53,6 +59,15 @@
             flavor = "balanced";
             tapping-term-ms = <250>;
             require-prior-idle-ms = <150>;
+        };
+    };
+
+    macros {
+        macro_enie: macro_enie {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N) &kp N>;
+            label = "MACRO_ENIE";
         };
     };
 
