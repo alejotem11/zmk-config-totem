@@ -101,7 +101,7 @@
             bindings = <
        &none  &none  &none  &none  &none    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS
        &none  &none  &none  &none  &none    &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &none
-&none  &none  &none  &none  &none  &none    &none     &kt LC(B)      &none        &none      &none    &none
+&none  &none  &none  &none  &none  &none    &none     &kp LC(B)      &none        &none      &none    &none
                      &none  &none  &none    &trans    &trans         &trans
             >;
         };
