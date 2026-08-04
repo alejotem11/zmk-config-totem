@@ -84,7 +84,7 @@
                &kp Q        &kp W        &kp E         &kp R          &kp T              &kp Y      &kp U         &kp I         &kp O        &kp P
                &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G              &kp H      &hrm RSHFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMICOLON
 &kp LG(SPACE)  &kp Z        &kp X        &kp C         &kp V          &kp B              &kp N      &kp M         &kp COMMA     &kp DOT      &kp SLASH            &kp RA(E)
-                                         &lt 5 TAB     &lt 1 DELETE   &lt 2 BACKSPACE    &kp SPACE  &lt 1 RETURN  &mo 4
+                                         &lt 4 TAB     &lt 1 DELETE   &lt 2 BACKSPACE    &kp SPACE  &lt 1 RETURN  &mo 5
             >;
         };
 
