@@ -56,13 +56,13 @@
 
         combo_num {
             bindings = <&mo 3>;
-            key-positions = <12 13>;
+            key-positions = <23 24>;
             layers = <0>;
         };
 
         combo_mouse {
-            bindings = <&mo 6>;
-            key-positions = <34 13>;
+            bindings = <&tog 6>;
+            key-positions = <24 23 22>;
         };
     };
 
@@ -76,6 +76,18 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             require-prior-idle-ms = <150>;
+            quick-tap-ms = <200>;
+        };
+
+        backspace: backspace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BACKSPACE";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "hold-preferred";
         };
     };
 
@@ -93,10 +105,10 @@
 
         base {
             bindings = <
-               &kp Q        &kp W        &kp E         &kp R          &kp T              &kp Y      &kp U         &kp I         &kp O        &kp P
-               &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G              &kp H      &hrm RSHFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMICOLON
-&kp LG(SPACE)  &kp Z        &kp X        &kp C         &kp V          &kp B              &kp N      &kp M         &kp COMMA     &kp DOT      &kp SLASH            &kp RA(E)
-                                         &mo 4         &lt 1 TAB      &lt 2 BACKSPACE    &kp SPACE  &lt 1 RETURN  &lt 5 DELETE
+               &kp Q        &kp W        &kp E         &kp R          &kp T                     &kp Y      &kp U         &kp I         &kp O        &kp P
+               &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G                     &kp H      &hrm RSHFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMICOLON
+&kp LG(SPACE)  &kp Z        &kp X        &kp C         &kp V          &kp B                     &kp N      &kp M         &kp COMMA     &kp DOT      &kp SLASH            &kp RA(E)
+                                         &mo 4         &lt 1 TAB      &backspace 2 BACKSPACE    &kp SPACE  &lt 1 RETURN  &lt 5 DELETE
             >;
         };
 
@@ -147,10 +159,10 @@
 
         mouse {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &msc SCRL_RIGHT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &trans
-        &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans           &mkp MB1        &mkp MB2        &trans           &trans  &trans
-                        &trans  &trans  &trans    &trans           &trans          &trans
+        &trans  &trans  &trans    &trans    &trans    &msc SCRL_RIGHT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &trans
+        &trans  &trans  &mkp MB2  &mkp MB1  &trans    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &trans           &trans          &trans          &trans           &trans  &trans
+                        &trans    &trans    &trans    &trans           &trans          &trans
             >;
         };
     };
