@@ -61,7 +61,7 @@
         };
 
         combo_mouse {
-            bindings = <&tog 6>;
+            bindings = <&mo 6>;
             key-positions = <24 23 22>;
         };
     };
@@ -130,8 +130,8 @@
             bindings = <
        &kp EXCL       &kp AT_SIGN       &kp HASH        &kp DOLLAR            &kp PERCENT    &kp CARET          &kp AMPERSAND          &kp ASTERISK     &kp GRAVE          &kp TILDE
        &kp LESS_THAN  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN
-&none  &none          &none             &kp MINUS       &kp UNDERSCORE        &kp PLUS       &kp SQT            &kp COLON              &kp PIPE         &kp BACKSLASH      &kp QMARK         &none
-                                        &none           &none                 &none          &trans             &trans                 &trans
+&none  &none          &none             &kp MINUS       &kp UNDERSCORE        &kp PLUS       &kp SQT            &kp COLON              &kp PIPE         &kp BACKSLASH      &kp QMARK         &tog 1
+                                        &none           &none                 &none          &none              &none                  &none
             >;
         };
 
@@ -139,17 +139,17 @@
             bindings = <
        &none  &none  &none  &none  &none    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp INS
        &none  &none  &none  &none  &none    &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &none
-&none  &none  &none  &none  &none  &none    &none     &trans         &none        &none      &none    &none
-                     &none  &none  &none    &trans    &trans         &trans
+&none  &none  &none  &none  &none  &none    &none     &none          &none        &none      &none    &tog 2
+                     &none  &none  &none    &none     &none          &none
             >;
         };
 
         num {
             bindings = <
-       &none  &none  &none   &none   &none     &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
-       &none  &none  &none   &none   &none     &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SUBTRACT
-&none  &none  &none  &none   &none   &none     &kp KP_N0        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL     &kp KP_DOT
-                     &trans  &trans  &trans    &trans           &trans           &trans
+       &none   &none   &none   &none   &none    &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
+       &trans  &trans  &trans  &trans  &none    &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SUBTRACT
+&none  &none   &none   &none   &none   &none    &kp KP_EQUAL     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none            &tog 3
+                       &none   &none   &none    &kp KP_N0        &kp KP_DOT       &none
             >;
         };
 
@@ -157,7 +157,7 @@
             bindings = <
        &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none                     &kp C_PREV            &kp C_NEXT            &kp C_PLAY_PAUSE  &none
        &none           &none         &none         &none         &none           &kp LS(LC(LG(NUMBER_4)))  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp K_MUTE        &none
-&none  &bt BT_CLR_ALL  &none         &none         &none         &bt BT_CLR      &kp LS(LC(LG(NUMBER_3)))  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none  &none
+&none  &bt BT_CLR_ALL  &none         &none         &none         &bt BT_CLR      &kp LS(LC(LG(NUMBER_3)))  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none  &tog 4
                                      &none         &none         &none           &none                     &none                 &none
             >;
         };
@@ -166,17 +166,17 @@
             bindings = <
        &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &none  &none  &none  &none  &none
        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &none  &none  &none  &none  &none
-&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &none  &none  &none  &none  &none  &none
+&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &none  &none  &none  &none  &none  &tog 5
                          &none    &none    &none      &none  &none  &none
             >;
         };
 
         mouse {
             bindings = <
-        &trans  &trans  &trans    &trans    &trans    &msc SCRL_RIGHT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &trans
-        &trans  &trans  &mkp MB2  &mkp MB1  &trans    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &trans           &trans          &trans          &trans           &trans  &trans
-                        &trans    &trans    &trans    &trans           &trans          &trans
+       &none  &none  &none  &none  &none    &msc SCRL_RIGHT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &none
+       &none  &none  &none  &none  &none    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &none
+&none  &none  &none  &none  &none  &none    &none            &none           &none           &none            &none  &tog 6
+                     &none  &none  &none    &mkp MB1         &mkp MB2        &none
             >;
         };
     };
