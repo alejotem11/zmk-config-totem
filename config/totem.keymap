@@ -45,7 +45,7 @@
 
         combo_enie {
             bindings = <&macro_enie>;
-            key-positions = <18 19>;
+            key-positions = <19 35>;
             layers = <0>;
         };
 
