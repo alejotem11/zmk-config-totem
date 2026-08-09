@@ -78,25 +78,25 @@
         combo_tog2 {
             bindings = <&tog 2>;
             key-positions = <16 17>;
-            layers = <1>;
+            layers = <2>;
         };
 
         combo_tog3 {
             bindings = <&tog 3>;
             key-positions = <16 17>;
-            layers = <1>;
+            layers = <3>;
         };
 
         combo_tog4 {
             bindings = <&tog 4>;
             key-positions = <16 17>;
-            layers = <1>;
+            layers = <4>;
         };
 
         combo_tog5 {
             bindings = <&tog 5>;
             key-positions = <16 17>;
-            layers = <1>;
+            layers = <5>;
         };
     };
 
