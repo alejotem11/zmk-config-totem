@@ -169,8 +169,8 @@
             bindings = <
                &kp Q          &kp W          &kp E           &kp R            &kp T                          &kp Y      &kp U           &kp I           &kp O          &kp P
                &hrm_l LGUI A  &hrm_l LALT S  &hrm_l LCTRL D  &hrm_l LSHIFT F  &kp G                          &kp H      &hrm_r LSHFT J  &hrm_r LCTRL K  &hrm_r LALT L  &hrm_r LGUI SEMICOLON
-&kp LG(SPACE)  &kp Z          &kp X          &kp C           &kp V            &kp B                          &kp N      &kp M           &kp COMMA       &kp DOT        &kp SLASH              &kp RA(E)
-                                             &mo 4           &lt 1 TAB        &thumb_hold_tap 2 BACKSPACE    &kp SPACE  &lt 1 RETURN    &lt 5 DELETE
+&kp LG(SPACE)  &kp Z          &kp X          &kp C           &lt 1 V          &kp B                          &kp N      &lt 1 M         &kp COMMA       &kp DOT        &kp SLASH              &kp RA(E)
+                                             &mo 4           &kp TAB          &thumb_hold_tap 2 BACKSPACE    &kp SPACE  &kp RETURN      &lt 5 DELETE
             >;
         };
 
