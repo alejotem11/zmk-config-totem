@@ -178,7 +178,7 @@
             bindings = <
        &kp EXCL       &kp AT_SIGN       &kp HASH        &kp DOLLAR            &kp PERCENT    &kp CARET          &kp AMPERSAND          &kp ASTERISK     &kp GRAVE          &kp TILDE
        &kp LESS_THAN  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN
-&none  &none          &kp LA(LS(N2))    &kp MINUS       &kp UNDERSCORE        &kp PLUS       &kp SQT            &kp COLON              &kp PIPE         &kp BACKSLASH      &kp QMARK         &none
+&none  &none          &kp LS(RA(N2))    &kp MINUS       &kp UNDERSCORE        &kp PLUS       &kp SQT            &kp COLON              &kp PIPE         &kp BACKSLASH      &kp QMARK         &none
                                         &none           &none                 &none          &none              &none                  &none
             >;
         };
