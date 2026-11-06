@@ -42,6 +42,12 @@
             layers = <SYM>;
         };
 
+        combo_guillemet_close {
+            bindings = <&kp RA(RS(BACKSLASH))>;
+            key-positions = <5 6>;
+            layers = <SYM>;
+        };
+
         combo_enie {
             bindings = <&macro_enie>;
             key-positions = <19 35>;
@@ -82,6 +88,12 @@
         combo_shortcut_qmark {
             bindings = <&shortcut_key RA(RS(FSLH))>;
             key-positions = <27 28>;
+            layers = <SHORT_SYM_R>;
+        };
+
+        combo_shortcut_guillemet_close {
+            bindings = <&shortcut_key RA(RS(BACKSLASH))>;
+            key-positions = <5 6>;
             layers = <SHORT_SYM_R>;
         };
 
@@ -191,7 +203,7 @@
 
         sym {
             bindings = <
-              &kp EXCL        &kp DOUBLE_QUOTES  &kp HASH        &kp SQT               &kp QMARK      &kp SLASH   &kp GRAVE              &kp ASTERISK     &kp AT_SIGN        &kp TILDE
+              &kp EXCL        &kp DOUBLE_QUOTES  &kp HASH        &kp SQT               &kp QMARK      &kp RA(BACKSLASH)  &kp GRAVE              &kp ASTERISK     &kp AT_SIGN        &kp TILDE
               &kp LESS_THAN   &kp LEFT_BRACKET   &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp CARET      &kp DOLLAR  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN
 &kp CAPSLOCK  &kp UNDERSCORE  &kp AMPERSAND      &kp MINUS       &kp COLON             &kp PERCENT    &kp EQUAL   &kp BACKSLASH          &kp PLUS         &kp PIPE           &kp LS(RA(N2))    &kp RA(U)
                                                      &none           &none                 &none          &none       &none                  &none
@@ -266,7 +278,7 @@
 
         short_sym_r {
             bindings = <
-          &none     &none     &none      &none      &none    &shortcut_key SLASH  &shortcut_key GRAVE             &shortcut_key ASTERISK    &shortcut_key AT_SIGN       &shortcut_key TILDE
+          &none     &none     &none      &none      &none    &shortcut_key RA(BACKSLASH)  &shortcut_key GRAVE             &shortcut_key ASTERISK    &shortcut_key AT_SIGN       &shortcut_key TILDE
           &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT &none    &shortcut_key DOLLAR &shortcut_key RIGHT_PARENTHESIS &shortcut_key RIGHT_BRACE &shortcut_key RIGHT_BRACKET &shortcut_key GREATER_THAN
 &to BASE  &none     &none     &none      &none      &none    &shortcut_key EQUAL  &shortcut_key BACKSLASH         &shortcut_key PLUS        &shortcut_key PIPE          &shortcut_key LS(RA(N2))   &none
                                       &none &none &none    &none &none &none
