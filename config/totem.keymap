@@ -21,6 +21,10 @@
 #define SYS  4
 #define FN   5
 #define BT   6
+#define SHORT_NUM   7
+#define SHORT_PICK  8
+#define SHORT_SYM_R 9
+#define SHORT_SYM_L 10
 
 / {
     combos {
@@ -56,14 +60,29 @@
             layers = <BASE>;
         };
 
-        combo_mhint {
-            bindings = <&kp LA(LG(X))>;
+        // Tap and release the thumbs, then enter one modified number/symbol.
+        combo_shortcut_num {
+            bindings = <&to SHORT_NUM>;
             key-positions = <34 35>;
+            layers = <BASE>;
         };
 
-        combo_mnormal {
-            bindings = <&kp LA(LG(C))>;
+        combo_shortcut_sym {
+            bindings = <&to SHORT_PICK>;
             key-positions = <34 36>;
+            layers = <BASE>;
+        };
+
+        combo_shortcut_excl {
+            bindings = <&shortcut_key RA(NUMBER_1)>;
+            key-positions = <23 24>;
+            layers = <SHORT_SYM_L>;
+        };
+
+        combo_shortcut_qmark {
+            bindings = <&shortcut_key RA(RS(FSLH))>;
+            key-positions = <27 28>;
+            layers = <SHORT_SYM_R>;
         };
 
         combo_mgrid {
@@ -120,6 +139,36 @@
     };
 
     macros {
+        // The first modifier fixes the symbol hand; later modifiers are plain kp.
+        shortcut_pick: shortcut_pick {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_tap>,
+                       <&macro_param_2to1 &to MACRO_PLACEHOLDER>,
+                       <&macro_press>,
+                       <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                       <&macro_pause_for_release>,
+                       <&macro_release>,
+                       <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        };
+
+        // Keep the target pressed normally; return to base only on its release.
+        // Modifiers stay down until their own physical keys are released.
+        shortcut_key: shortcut_key {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press>,
+                       <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                       <&macro_pause_for_release>,
+                       <&macro_release>,
+                       <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                       <&macro_tap &to BASE>;
+        };
+
         macro_enie: macro_enie {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -191,6 +240,45 @@
        &none  &none  &none  &none  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &none  &none  &none  &none  &none  &none    &none         &none         &none         &none         &none         &bt BT_CLR_ALL
                      &none  &none  &none    &none         &none         &none
+            >;
+        };
+
+        // Direct modifiers avoid home-row hold/tap timing in shortcut modes.
+        // Position 20 (far-left pinky key) cancels without sending Escape.
+        short_num {
+            bindings = <
+          &none     &none     &none      &none      &none    &shortcut_key KP_DIVIDE   &shortcut_key N7 &shortcut_key N8 &shortcut_key N9 &shortcut_key KP_MULTIPLY
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT &none    &shortcut_key KP_SUBTRACT &shortcut_key N4 &shortcut_key N5 &shortcut_key N6 &shortcut_key KP_PLUS
+&to BASE  &none     &none     &none      &none      &none    &shortcut_key KP_EQUAL    &shortcut_key N1 &shortcut_key N2 &shortcut_key N3 &none                     &none
+                                      &none &none &none    &shortcut_key N0 &shortcut_key KP_DOT &none
+            >;
+        };
+
+        // The first modifier selects the opposite symbol half for this shortcut.
+        short_pick {
+            bindings = <
+          &none                           &none                           &none                            &none                             &none    &none &none                            &none                            &none                           &none
+          &shortcut_pick LGUI SHORT_SYM_R &shortcut_pick LALT SHORT_SYM_R &shortcut_pick LCTRL SHORT_SYM_R &shortcut_pick LSHIFT SHORT_SYM_R &none    &none &shortcut_pick LSHFT SHORT_SYM_L &shortcut_pick LCTRL SHORT_SYM_L &shortcut_pick LALT SHORT_SYM_L &shortcut_pick LGUI SHORT_SYM_L
+&to BASE  &none                           &none                           &none                            &none                             &none    &none &none                            &none                            &none                           &none                           &none
+                                                                                 &none &none &none    &none &none &none
+            >;
+        };
+
+        short_sym_r {
+            bindings = <
+          &none     &none     &none      &none      &none    &shortcut_key SLASH  &shortcut_key GRAVE             &shortcut_key ASTERISK    &shortcut_key AT_SIGN       &shortcut_key TILDE
+          &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT &none    &shortcut_key DOLLAR &shortcut_key RIGHT_PARENTHESIS &shortcut_key RIGHT_BRACE &shortcut_key RIGHT_BRACKET &shortcut_key GREATER_THAN
+&to BASE  &none     &none     &none      &none      &none    &shortcut_key EQUAL  &shortcut_key BACKSLASH         &shortcut_key PLUS        &shortcut_key PIPE          &shortcut_key LS(RA(N2))   &none
+                                      &none &none &none    &none &none &none
+            >;
+        };
+
+        short_sym_l {
+            bindings = <
+          &shortcut_key EXCL      &shortcut_key DOUBLE_QUOTES &shortcut_key HASH       &shortcut_key SQT              &shortcut_key QMARK      &none &none     &none     &none    &none
+          &shortcut_key LESS_THAN &shortcut_key LEFT_BRACKET  &shortcut_key LEFT_BRACE &shortcut_key LEFT_PARENTHESIS &shortcut_key CARET      &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI
+&to BASE  &shortcut_key UNDERSCORE &shortcut_key AMPERSAND     &shortcut_key MINUS      &shortcut_key COLON            &shortcut_key PERCENT    &none &none     &none     &none    &none    &none
+                                                                                               &none &none &none    &none &none &none
             >;
         };
     };
